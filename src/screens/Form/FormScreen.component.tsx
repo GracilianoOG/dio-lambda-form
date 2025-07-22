@@ -10,6 +10,12 @@ const FormScreen = () => {
     message: "",
   });
 
+  const handleSubmit = () => {
+    console.log(
+      `Your data: \nName: ${formData.name}\nE-mail: ${formData.email}\nMessage: ${formData.message}`
+    );
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.field}>
@@ -45,7 +51,7 @@ const FormScreen = () => {
           value={formData.message}
         />
       </View>
-      <Pressable style={styles.button}>
+      <Pressable style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Submit</Text>
       </Pressable>
     </View>
