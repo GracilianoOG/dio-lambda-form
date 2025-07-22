@@ -14,6 +14,10 @@ const sharedOptions: NativeStackNavigationOptions = {
   headerTitleAlign: "center",
 };
 
+const formScreenOptions: NativeStackNavigationOptions = {
+  headerTitle: "Message Us",
+};
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -26,7 +30,7 @@ export default function App() {
         <Screen
           name="Form"
           component={FormScreen}
-          options={sharedOptions}
+          options={{ ...sharedOptions, ...formScreenOptions }}
         ></Screen>
       </Navigator>
     </NavigationContainer>
