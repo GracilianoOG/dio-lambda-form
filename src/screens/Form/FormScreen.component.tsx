@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Pressable } from "react-native";
 
 import { styles } from "./FormScreen.style";
 
@@ -33,6 +33,9 @@ const FormScreen = () => {
           placeholder="Message here..."
         />
       </View>
+      <Pressable style={styles.button}>
+        <Text style={styles.buttonText}>Submit</Text>
+      </Pressable>
     </View>
   );
 };

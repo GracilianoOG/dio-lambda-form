@@ -23,4 +23,16 @@ export const styles = StyleSheet.create({
     borderColor: "#9c9c9cff",
     padding: 16,
   },
+  button: {
+    backgroundColor: "#fa7e14",
+    padding: 14,
+    width: "80%",
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "700",
+    letterSpacing: 2.5,
+    textAlign: "center",
+    textTransform: "uppercase",
+  },
 });
