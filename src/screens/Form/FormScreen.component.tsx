@@ -22,6 +22,17 @@ const FormScreen = () => {
           placeholder="email@example.com"
         />
       </View>
+      <View style={styles.field}>
+        <Text style={styles.label}>Message: </Text>
+        <TextInput
+          style={styles.input}
+          editable
+          multiline
+          numberOfLines={4}
+          maxLength={40}
+          placeholder="Message here..."
+        />
+      </View>
     </View>
   );
 };
