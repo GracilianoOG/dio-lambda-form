@@ -1,12 +1,15 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TextInput } from "react-native";
 
 import { styles } from "./FormScreen.style";
 
 const FormScreen = () => {
   return (
-    <View>
-      <Text>hello world</Text>
+    <View style={styles.container}>
+      <View style={styles.field}>
+        <Text style={styles.label}>Name: </Text>
+        <TextInput style={styles.input} keyboardType="name-phone-pad" />
+      </View>
     </View>
   );
 };
