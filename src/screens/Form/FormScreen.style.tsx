@@ -4,17 +4,22 @@ export const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     flex: 1,
+    gap: 28,
     justifyContent: "center",
   },
   field: {
     width: "80%",
   },
   label: {
-    fontSize: 18,
+    fontSize: 14,
+    fontWeight: "700",
+    marginBottom: 8,
     textAlign: "left",
+    textTransform: "uppercase",
   },
   input: {
-    elevation: 1,
-    padding: 20,
+    borderWidth: 1,
+    borderColor: "#9c9c9cff",
+    padding: 16,
   },
 });
