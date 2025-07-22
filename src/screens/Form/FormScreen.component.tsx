@@ -1,9 +1,15 @@
-import React from "react";
-import { View, Text, TextInput, Pressable } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TextInput, Pressable, Alert } from "react-native";
 
 import { styles } from "./FormScreen.style";
 
 const FormScreen = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.field}>
@@ -12,6 +18,8 @@ const FormScreen = () => {
           style={styles.input}
           keyboardType="name-phone-pad"
           placeholder="John Doe"
+          onChangeText={name => setFormData({ ...formData, name })}
+          value={formData.name}
         />
       </View>
       <View style={styles.field}>
@@ -20,6 +28,8 @@ const FormScreen = () => {
           style={styles.input}
           keyboardType="email-address"
           placeholder="email@example.com"
+          onChangeText={email => setFormData({ ...formData, email })}
+          value={formData.email}
         />
       </View>
       <View style={styles.field}>
@@ -31,6 +41,8 @@ const FormScreen = () => {
           numberOfLines={4}
           maxLength={40}
           placeholder="Message here..."
+          onChangeText={message => setFormData({ ...formData, message })}
+          value={formData.message}
         />
       </View>
       <Pressable style={styles.button}>
