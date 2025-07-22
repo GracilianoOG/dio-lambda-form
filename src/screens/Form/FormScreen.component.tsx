@@ -8,7 +8,11 @@ const FormScreen = () => {
     <View style={styles.container}>
       <View style={styles.field}>
         <Text style={styles.label}>Name: </Text>
-        <TextInput style={styles.input} keyboardType="name-phone-pad" />
+        <TextInput
+          style={styles.input}
+          keyboardType="name-phone-pad"
+          placeholder="John Doe"
+        />
       </View>
       <View style={styles.field}>
         <Text style={styles.label}>E-mail: </Text>
