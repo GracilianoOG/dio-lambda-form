@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     fontWeight: "700",
+    letterSpacing: 2.5,
     marginBottom: 8,
     textAlign: "left",
     textTransform: "uppercase",
