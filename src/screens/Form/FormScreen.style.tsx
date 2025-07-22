@@ -36,4 +36,7 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     textTransform: "uppercase",
   },
+  buttonPressed: {
+    backgroundColor: "#d86f12ff",
+  },
 });
