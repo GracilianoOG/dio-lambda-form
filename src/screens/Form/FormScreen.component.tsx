@@ -60,7 +60,13 @@ const FormScreen = () => {
           value={formData.message}
         />
       </View>
-      <Pressable style={styles.button} onPress={handleSubmit}>
+      <Pressable
+        style={({ pressed }) => [
+          styles.button,
+          pressed && styles.buttonPressed,
+        ]}
+        onPress={handleSubmit}
+      >
         <Text style={styles.buttonText}>Submit</Text>
       </Pressable>
     </View>
