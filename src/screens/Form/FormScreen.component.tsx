@@ -10,6 +10,14 @@ const FormScreen = () => {
         <Text style={styles.label}>Name: </Text>
         <TextInput style={styles.input} keyboardType="name-phone-pad" />
       </View>
+      <View style={styles.field}>
+        <Text style={styles.label}>E-mail: </Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="email-address"
+          placeholder="email@example.com"
+        />
+      </View>
     </View>
   );
 };
