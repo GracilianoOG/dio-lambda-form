@@ -6,9 +6,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     gap: 28,
     justifyContent: "center",
+    padding: 32,
   },
   field: {
-    width: "80%",
+    width: "100%",
   },
   label: {
     fontSize: 14,
@@ -26,7 +27,7 @@ export const styles = StyleSheet.create({
   button: {
     backgroundColor: "#fa7e14",
     padding: 14,
-    width: "80%",
+    width: "100%",
   },
   buttonText: {
     color: "#fff",
