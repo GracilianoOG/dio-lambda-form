@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Pressable, Alert } from "react-native";
+import { View, Text, TextInput, Pressable, Alert, Image } from "react-native";
 
 import { styles } from "./FormScreen.style";
 
@@ -18,6 +18,15 @@ const FormScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Image
+        style={{
+          width: 64,
+          height: 64,
+          marginBottom: 32,
+          alignSelf: "flex-start",
+        }}
+        source={require("../../../assets/lambda.png")}
+      />
       <View style={styles.field}>
         <Text style={styles.label}>Name: </Text>
         <TextInput
