@@ -16,7 +16,7 @@ export type TextFieldProps = {
   name: string;
   formData: FormDataType;
   setFormData: React.Dispatch<React.SetStateAction<FormDataType>>;
-  keyboardType: KeyboardTypeOptions;
+  keyboardType?: KeyboardTypeOptions;
   placeholder: string;
   ref: any;
   submitConfig: SubmitConfig;
