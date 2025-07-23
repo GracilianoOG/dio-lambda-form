@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Pressable, Alert, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Pressable,
+  Alert,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 import { styles } from "./FormScreen.style";
 import TextField from "../../components/TextField/TextField.component";
 import { FormDataType } from "../../utils/types";
@@ -19,7 +28,10 @@ const FormScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
       <Image
         style={{
           width: 64,
@@ -63,7 +75,7 @@ const FormScreen = () => {
       >
         <Text style={styles.buttonText}>Submit</Text>
       </Pressable>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
