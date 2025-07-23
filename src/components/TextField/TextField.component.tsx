@@ -7,7 +7,7 @@ type TextFieldProps = {
   label: string;
   name: string;
   formData: FormDataType;
-  setFormData: any;
+  setFormData: React.Dispatch<React.SetStateAction<FormDataType>>;
   keyboardType: KeyboardTypeOptions;
   placeholder: string;
 };
