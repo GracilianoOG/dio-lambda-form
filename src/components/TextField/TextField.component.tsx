@@ -2,6 +2,7 @@ import React from "react";
 import { Text, TextInput, View } from "react-native";
 import { styles } from "./TextField.style";
 import { TextFieldProps } from "./types";
+import { FormDataType } from "../../utils/types";
 
 const TextField = ({
   label,
@@ -19,7 +20,7 @@ const TextField = ({
         keyboardType={keyboardType}
         placeholder={placeholder}
         onChangeText={data => setFormData({ ...formData, [name]: data })}
-        value={formData.name}
+        value={formData[name as keyof FormDataType]}
       />
     </View>
   );
