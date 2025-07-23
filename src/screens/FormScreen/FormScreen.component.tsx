@@ -7,6 +7,7 @@ import {
   Platform,
   TextInput,
   View,
+  Alert,
 } from "react-native";
 import { styles } from "./FormScreen.style";
 import TextField from "../../components/TextField/TextField.component";
@@ -16,6 +17,7 @@ import TextArea from "../../components/TextArea/TextArea.component";
 const FormScreen = () => {
   const [formData, setFormData] = useState<FormDataType>({
     name: "",
+    lastName: "",
     email: "",
     message: "",
   });
@@ -26,8 +28,9 @@ const FormScreen = () => {
   const messageRef = useRef<TextInput>(null);
 
   const handleSubmit = () => {
-    console.log(
-      `Your data: \nName: ${formData.name}\nE-mail: ${formData.email}\nMessage: ${formData.message}`
+    Alert.alert(
+      "Your Data",
+      `Name: ${formData.name} ${formData.lastName}\nE-mail: ${formData.email}\nMessage: ${formData.message}`
     );
   };
 
@@ -57,7 +60,7 @@ const FormScreen = () => {
         />
         <TextField
           label="Last Name"
-          name="name"
+          name="lastName"
           setFormData={setFormData}
           formData={formData}
           keyboardType="name-phone-pad"
