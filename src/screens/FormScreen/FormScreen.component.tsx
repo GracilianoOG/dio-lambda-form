@@ -5,6 +5,7 @@ import {
   Image,
   KeyboardAvoidingView,
   Platform,
+  TextInput,
 } from "react-native";
 import { styles } from "./FormScreen.style";
 import TextField from "../../components/TextField/TextField.component";
@@ -18,9 +19,9 @@ const FormScreen = () => {
     message: "",
   });
 
-  const nameRef = useRef<any>(null);
-  const emailRef = useRef<any>(null);
-  const messageRef = useRef<any>(null);
+  const nameRef = useRef<TextInput>(null);
+  const emailRef = useRef<TextInput>(null);
+  const messageRef = useRef<TextInput>(null);
 
   const handleSubmit = () => {
     console.log(
