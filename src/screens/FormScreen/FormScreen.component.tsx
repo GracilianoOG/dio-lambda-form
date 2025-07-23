@@ -20,6 +20,7 @@ const FormScreen = () => {
 
   const nameRef = useRef<any>(null);
   const emailRef = useRef<any>(null);
+  const messageRef = useRef<any>(null);
 
   const handleSubmit = () => {
     console.log(
@@ -61,7 +62,7 @@ const FormScreen = () => {
         submitConfig={{
           returnKeyType: "next",
           submitBehavior: "submit",
-          onSubmitEditing: () => nameRef.current?.focus(),
+          onSubmitEditing: () => messageRef.current?.focus(),
         }}
       />
       <TextArea
@@ -72,6 +73,11 @@ const FormScreen = () => {
         placeholder="Message here..."
         numberOfLines={4}
         maxLength={40}
+        ref={messageRef}
+        submitConfig={{
+          returnKeyType: "done",
+          submitBehavior: "blurAndSubmit",
+        }}
       />
       <Pressable
         style={({ pressed }) => [
