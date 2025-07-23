@@ -3,6 +3,7 @@ import { View, Text, TextInput, Pressable, Alert, Image } from "react-native";
 import { styles } from "./FormScreen.style";
 import TextField from "../../components/TextField/TextField.component";
 import { FormDataType } from "../../utils/types";
+import TextArea from "../../components/TextArea/TextArea.component";
 
 const FormScreen = () => {
   const [formData, setFormData] = useState<FormDataType>({
@@ -44,19 +45,15 @@ const FormScreen = () => {
         keyboardType="email-address"
         placeholder="email@example.com"
       />
-      <View style={styles.field}>
-        <Text style={styles.label}>Message: </Text>
-        <TextInput
-          style={styles.input}
-          editable
-          multiline
-          numberOfLines={4}
-          maxLength={40}
-          placeholder="Message here..."
-          onChangeText={message => setFormData({ ...formData, message })}
-          value={formData.message}
-        />
-      </View>
+      <TextArea
+        label="Message"
+        name="message"
+        setFormData={setFormData}
+        formData={formData}
+        placeholder="Message here..."
+        numberOfLines={4}
+        maxLength={40}
+      />
       <Pressable
         style={({ pressed }) => [
           styles.button,
