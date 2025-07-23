@@ -11,14 +11,20 @@ const TextField = ({
   formData,
   keyboardType,
   placeholder,
+  ref,
+  submitConfig,
 }: TextFieldProps) => {
   return (
     <View style={styles.field}>
       <Text style={styles.label}>{label}:</Text>
       <TextInput
+        ref={ref}
         style={styles.input}
         keyboardType={keyboardType}
         placeholder={placeholder}
+        returnKeyType={submitConfig.returnKeyType}
+        submitBehavior={submitConfig.submitBehavior}
+        onSubmitEditing={submitConfig.onSubmitEditing}
         onChangeText={data => setFormData({ ...formData, [name]: data })}
         value={formData[name as keyof FormDataType]}
       />
