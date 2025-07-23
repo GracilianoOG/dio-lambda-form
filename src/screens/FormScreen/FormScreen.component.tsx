@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Text,
   Pressable,
@@ -17,6 +17,9 @@ const FormScreen = () => {
     email: "",
     message: "",
   });
+
+  const nameRef = useRef<any>(null);
+  const emailRef = useRef<any>(null);
 
   const handleSubmit = () => {
     console.log(
@@ -40,6 +43,12 @@ const FormScreen = () => {
         formData={formData}
         keyboardType="name-phone-pad"
         placeholder="John Doe"
+        ref={nameRef}
+        submitConfig={{
+          returnKeyType: "next",
+          submitBehavior: "submit",
+          onSubmitEditing: () => emailRef.current?.focus(),
+        }}
       />
       <TextField
         label="E-mail"
@@ -47,7 +56,13 @@ const FormScreen = () => {
         setFormData={setFormData}
         formData={formData}
         keyboardType="email-address"
+        ref={emailRef}
         placeholder="email@example.com"
+        submitConfig={{
+          returnKeyType: "next",
+          submitBehavior: "submit",
+          onSubmitEditing: () => nameRef.current?.focus(),
+        }}
       />
       <TextArea
         label="Message"
