@@ -13,6 +13,8 @@ const TextArea = ({
   placeholder,
   numberOfLines,
   maxLength,
+  ref,
+  submitConfig,
 }: TextAreaProps) => {
   return (
     <View style={styles.field}>
@@ -27,6 +29,10 @@ const TextArea = ({
         placeholder={placeholder}
         onChangeText={data => setFormData({ ...formData, [name]: data })}
         value={formData[name as keyof FormDataType]}
+        ref={ref}
+        returnKeyType={submitConfig.returnKeyType}
+        submitBehavior={submitConfig.submitBehavior}
+        onSubmitEditing={submitConfig.onSubmitEditing}
       />
     </View>
   );
