@@ -4,7 +4,7 @@ import {
 } from "@react-navigation/native-stack";
 import React from "react";
 import HomeScreen from "../screens/Home/HomeScreen.component";
-import FormScreen from "../screens/Form/FormScreen.component";
+import FormScreen from "../screens/FormScreen/FormScreen.component";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
