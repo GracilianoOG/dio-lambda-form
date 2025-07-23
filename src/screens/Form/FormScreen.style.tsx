@@ -23,4 +23,10 @@ export const styles = StyleSheet.create({
   buttonPressed: {
     backgroundColor: "#d86f12ff",
   },
+  logo: {
+    alignSelf: "flex-start",
+    height: 64,
+    marginBottom: 32,
+    width: 64,
+  },
 });

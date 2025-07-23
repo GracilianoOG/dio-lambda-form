@@ -30,12 +30,7 @@ const FormScreen = () => {
       style={styles.container}
     >
       <Image
-        style={{
-          width: 64,
-          height: 64,
-          marginBottom: 32,
-          alignSelf: "flex-start",
-        }}
+        style={styles.logo}
         source={require("../../../assets/lambda.png")}
       />
       <TextField
