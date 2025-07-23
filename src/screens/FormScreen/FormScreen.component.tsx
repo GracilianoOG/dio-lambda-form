@@ -28,7 +28,7 @@ const FormScreen = () => {
 
   const handleSubmit = () => {
     Alert.alert(
-      "Your Data",
+      "Fake Data Submission:",
       `Name: ${formData.name} ${formData.lastName}\nE-mail: ${formData.email}\nMessage: ${formData.message}`
     );
   };
