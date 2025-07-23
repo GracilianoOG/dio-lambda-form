@@ -1,12 +1,12 @@
 import React from "react";
 import { KeyboardTypeOptions, Text, TextInput, View } from "react-native";
-
 import { styles } from "./TextField.style";
+import { FormDataType } from "../../utils/types";
 
 type TextFieldProps = {
   label: string;
   name: string;
-  formData: any;
+  formData: FormDataType;
   setFormData: any;
   keyboardType: KeyboardTypeOptions;
   placeholder: string;
