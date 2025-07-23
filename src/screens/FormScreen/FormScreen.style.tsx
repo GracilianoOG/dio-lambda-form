@@ -29,4 +29,7 @@ export const styles = StyleSheet.create({
     marginBottom: 32,
     width: 64,
   },
+  row: {
+    flexDirection: "row",
+  },
 });
