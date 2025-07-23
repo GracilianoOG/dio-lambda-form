@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Pressable, Alert, Image } from "react-native";
 import { styles } from "./FormScreen.style";
 import TextField from "../../components/TextField/TextField.component";
+import { FormDataType } from "../../utils/types";
 
 const FormScreen = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataType>({
     name: "",
     email: "",
     message: "",
