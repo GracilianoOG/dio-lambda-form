@@ -1,15 +1,19 @@
 import {
   KeyboardTypeOptions,
+  NativeSyntheticEvent,
   ReturnKeyTypeOptions,
   SubmitBehavior,
   TextInput,
+  TextInputSubmitEditingEventData,
 } from "react-native";
 import { FormDataType } from "../../utils/types";
 
 type SubmitConfig = {
   returnKeyType: ReturnKeyTypeOptions;
   submitBehavior: SubmitBehavior;
-  onSubmitEditing?: any;
+  onSubmitEditing?: (
+    e: NativeSyntheticEvent<TextInputSubmitEditingEventData>
+  ) => void;
 };
 
 export type TextFieldProps = {
