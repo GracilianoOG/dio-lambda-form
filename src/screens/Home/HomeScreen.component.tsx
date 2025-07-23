@@ -1,17 +1,8 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./HomeScreen.style";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
-
-type RootStackParamList = {
-  Home: undefined;
-  Form: undefined;
-};
-
-type HomeScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, "Home">;
-};
+import { HomeScreenProps } from "./types";
 
 const HomeScreen = ({ navigation }: HomeScreenProps) => {
   return (
