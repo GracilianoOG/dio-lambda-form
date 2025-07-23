@@ -6,6 +6,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   TextInput,
+  View,
 } from "react-native";
 import { styles } from "./FormScreen.style";
 import TextField from "../../components/TextField/TextField.component";
@@ -19,7 +20,8 @@ const FormScreen = () => {
     message: "",
   });
 
-  const nameRef = useRef<TextInput>(null);
+  const firstNameRef = useRef<TextInput>(null);
+  const lastNameRef = useRef<TextInput>(null);
   const emailRef = useRef<TextInput>(null);
   const messageRef = useRef<TextInput>(null);
 
@@ -38,48 +40,68 @@ const FormScreen = () => {
         style={styles.logo}
         source={require("../../../assets/lambda.png")}
       />
-      <TextField
-        label="Name"
-        name="name"
-        setFormData={setFormData}
-        formData={formData}
-        keyboardType="name-phone-pad"
-        placeholder="John Doe"
-        ref={nameRef}
-        submitConfig={{
-          returnKeyType: "next",
-          submitBehavior: "submit",
-          onSubmitEditing: () => emailRef.current?.focus(),
-        }}
-      />
-      <TextField
-        label="E-mail"
-        name="email"
-        setFormData={setFormData}
-        formData={formData}
-        keyboardType="email-address"
-        ref={emailRef}
-        placeholder="email@example.com"
-        submitConfig={{
-          returnKeyType: "next",
-          submitBehavior: "submit",
-          onSubmitEditing: () => messageRef.current?.focus(),
-        }}
-      />
-      <TextArea
-        label="Message"
-        name="message"
-        setFormData={setFormData}
-        formData={formData}
-        placeholder="Message here..."
-        numberOfLines={4}
-        maxLength={40}
-        ref={messageRef}
-        submitConfig={{
-          returnKeyType: "done",
-          submitBehavior: "blurAndSubmit",
-        }}
-      />
+      <View style={[styles.row, { gap: 12 }]}>
+        <TextField
+          label="First Name"
+          name="name"
+          setFormData={setFormData}
+          formData={formData}
+          keyboardType="name-phone-pad"
+          placeholder="John"
+          ref={firstNameRef}
+          submitConfig={{
+            returnKeyType: "next",
+            submitBehavior: "submit",
+            onSubmitEditing: () => lastNameRef.current?.focus(),
+          }}
+        />
+        <TextField
+          label="Last Name"
+          name="name"
+          setFormData={setFormData}
+          formData={formData}
+          keyboardType="name-phone-pad"
+          placeholder="Doe"
+          ref={lastNameRef}
+          submitConfig={{
+            returnKeyType: "next",
+            submitBehavior: "submit",
+            onSubmitEditing: () => emailRef.current?.focus(),
+          }}
+        />
+      </View>
+      <View style={styles.row}>
+        <TextField
+          label="E-mail"
+          name="email"
+          setFormData={setFormData}
+          formData={formData}
+          keyboardType="email-address"
+          ref={emailRef}
+          placeholder="email@example.com"
+          submitConfig={{
+            returnKeyType: "next",
+            submitBehavior: "submit",
+            onSubmitEditing: () => messageRef.current?.focus(),
+          }}
+        />
+      </View>
+      <View style={styles.row}>
+        <TextArea
+          label="Message"
+          name="message"
+          setFormData={setFormData}
+          formData={formData}
+          placeholder="Message here..."
+          numberOfLines={4}
+          maxLength={40}
+          ref={messageRef}
+          submitConfig={{
+            returnKeyType: "done",
+            submitBehavior: "blurAndSubmit",
+          }}
+        />
+      </View>
       <Pressable
         style={({ pressed }) => [
           styles.button,
