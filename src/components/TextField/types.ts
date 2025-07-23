@@ -23,6 +23,6 @@ export type TextFieldProps = {
   setFormData: React.Dispatch<React.SetStateAction<FormDataType>>;
   keyboardType?: KeyboardTypeOptions;
   placeholder: string;
-  ref: React.Ref<TextInput>;
+  ref?: React.Ref<TextInput>;
   submitConfig: SubmitConfig;
 };
