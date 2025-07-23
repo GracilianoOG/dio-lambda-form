@@ -22,7 +22,6 @@ const FormScreen = () => {
     message: "",
   });
 
-  const firstNameRef = useRef<TextInput>(null);
   const lastNameRef = useRef<TextInput>(null);
   const emailRef = useRef<TextInput>(null);
   const messageRef = useRef<TextInput>(null);
@@ -51,7 +50,6 @@ const FormScreen = () => {
           formData={formData}
           keyboardType="name-phone-pad"
           placeholder="John"
-          ref={firstNameRef}
           submitConfig={{
             returnKeyType: "next",
             submitBehavior: "submit",
