@@ -5,6 +5,7 @@ import {
 } from "@react-navigation/native-stack";
 import HomeScreen from "./src/screens/Home/HomeScreen.component";
 import FormScreen from "./src/screens/Form/FormScreen.component";
+import Routes from "./src/routes";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -19,20 +20,5 @@ const formScreenOptions: NativeStackNavigationOptions = {
 };
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Navigator>
-        <Screen
-          name="Home"
-          component={HomeScreen}
-          options={sharedOptions}
-        ></Screen>
-        <Screen
-          name="Form"
-          component={FormScreen}
-          options={{ ...sharedOptions, ...formScreenOptions }}
-        ></Screen>
-      </Navigator>
-    </NavigationContainer>
-  );
+  return <Routes />;
 }
