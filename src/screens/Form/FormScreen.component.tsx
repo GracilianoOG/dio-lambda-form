@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Pressable, Alert, Image } from "react-native";
-
 import { styles } from "./FormScreen.style";
+import TextField from "../../components/TextField/TextField.component";
 
 const FormScreen = () => {
   const [formData, setFormData] = useState({
@@ -27,26 +27,22 @@ const FormScreen = () => {
         }}
         source={require("../../../assets/lambda.png")}
       />
-      <View style={styles.field}>
-        <Text style={styles.label}>Name: </Text>
-        <TextInput
-          style={styles.input}
-          keyboardType="name-phone-pad"
-          placeholder="John Doe"
-          onChangeText={name => setFormData({ ...formData, name })}
-          value={formData.name}
-        />
-      </View>
-      <View style={styles.field}>
-        <Text style={styles.label}>E-mail: </Text>
-        <TextInput
-          style={styles.input}
-          keyboardType="email-address"
-          placeholder="email@example.com"
-          onChangeText={email => setFormData({ ...formData, email })}
-          value={formData.email}
-        />
-      </View>
+      <TextField
+        label="Name"
+        name="name"
+        setFormData={setFormData}
+        formData={formData}
+        keyboardType="name-phone-pad"
+        placeholder="John Doe"
+      />
+      <TextField
+        label="E-mail"
+        name="email"
+        setFormData={setFormData}
+        formData={formData}
+        keyboardType="email-address"
+        placeholder="email@example.com"
+      />
       <View style={styles.field}>
         <Text style={styles.label}>Message: </Text>
         <TextInput
